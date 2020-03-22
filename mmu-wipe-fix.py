@@ -48,11 +48,11 @@ with open(file_input) as input:
 			line = line.strip()
 			
 			# switch on segment
-			if (re.search('CP TOOLCHANGE WIPE', line)  or  re.search('CP EMPTY GRID START', line)):
+			if (re.search('CP TOOLCHANGE WIPE', line)  or  re.search('CP EMPTY GRID START', line)  or  re.search('CP WIPE TOWER FIRST LAYER BRIM START', line)):
 				segment_mod = True
 			
 			# switch off segment
-			if (re.search('CP TOOLCHANGE END', line)  or  re.search('CP EMPTY GRID END', line)):
+			if (re.search('CP TOOLCHANGE END', line)  or  re.search('CP EMPTY GRID END', line)  or  re.search('CP WIPE TOWER FIRST LAYER BRIM END', line)):
 				segment_mod = False
 				segment_check()
 				segment_data = []
